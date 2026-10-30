@@ -1,0 +1,81 @@
+# ==========================================
+# fast-ftp - Git Ignore Rules
+# ==========================================
+
+# Compiled Binaries & Executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.bin
+
+# Wails Build Outputs
+build/bin/
+bin/
+frontend/dist/
+frontend/package.json.md5
+*.md5
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+vendor/
+
+# Package Manager Caches & Temp
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Go Build & Test Artifacts
+*.test
+*.out
+coverage.txt
+profile.out
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Settings
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Environment & Sensitive Files
+.env
+.env.local
+.env.*.local
+*.local
+secrets.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.lockb.bak
+
+# Local Agent & Skills
+.agents/
+skills-lock.json
+*.tmp
