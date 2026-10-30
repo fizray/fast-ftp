@@ -32,9 +32,14 @@ function Run-Typecheck {
 }
 
 function Run-Check {
+    Run-Typecheck
+    $distPath = Join-Path $ProjectRoot "frontend\dist"
+    if (-not (Test-Path $distPath)) {
+        Write-Host "==> Building frontend for Go embed..." -ForegroundColor Cyan
+        bun run --cwd frontend build
+    }
     Run-Vet
     Run-Test
-    Run-Typecheck
     Write-Host "`nAll checks passed successfully!" -ForegroundColor Green
 }
 

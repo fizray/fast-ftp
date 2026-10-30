@@ -27,6 +27,18 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Install Frontend Dependencies
+        working-directory: ./frontend
+        run: bun install --frozen-lockfile
+
+      - name: Frontend TypeScript Typecheck
+        working-directory: ./frontend
+        run: bun run typecheck
+
+      - name: Frontend Build
+        working-directory: ./frontend
+        run: bun run build
+
       - name: Verify Go Formatting
         run: |
           $unformatted = go fmt ./...
@@ -40,16 +52,3 @@ jobs:
 
       - name: Run Go Unit Tests
         run: go test -v ./...
-
-      - name: Install Frontend Dependencies
-        working-directory: ./frontend
-        run: bun install --frozen-lockfile
-
-      - name: Frontend TypeScript Typecheck
-        working-directory: ./frontend
-        run: bun run typecheck
-
-      - name: Frontend Build
-        working-directory: ./frontend
-        run: bun run build
-
